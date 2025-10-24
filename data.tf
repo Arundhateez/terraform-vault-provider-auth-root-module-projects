@@ -1,5 +1,5 @@
 locals {
-    vault_policy = <<EOT
+  vault_policy = <<EOT
 # Allow tokens to query themselves
 path "auth/token/lookup-self" {
   capabilities = ["read"]
