@@ -4,7 +4,7 @@ variable "vault_url" {
 }
 variable "jwt_backend_path" {
     type = string
-    default = "jwt"
+    default = "vault-auth"
     description = "the path in which you would like to mount the Vault JWT Auth Backend in Vault"
 }
 variable "tfc_vault_audience" {
