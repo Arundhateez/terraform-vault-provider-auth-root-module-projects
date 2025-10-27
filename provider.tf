@@ -3,4 +3,5 @@ provider "tfe" {
 }
 provider "vault" {
   address = var.vault_url
+  namespace = var.vault_namespace
 }
