@@ -4,7 +4,7 @@ variable "vault_url" {
 }
 variable "jwt_backend_path" {
   type        = string
-  default     = "vault-auth"
+  default     = "jwt"
   description = "the path in which you would like to mount the Vault JWT Auth Backend in Vault"
 }
 variable "tfc_vault_audience" {
@@ -35,4 +35,9 @@ variable "vault_policy" {
   type        = string
   default     = null
   description = "Vault Policy to assiciate with Terraform Platform"
+}
+variable "vault_namespace" {
+  type        = string
+  default     = "admin"
+  description = "Vault Namespace to create integration"
 }

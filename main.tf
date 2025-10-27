@@ -1,6 +1,5 @@
 module "vault-auth" {
-  source  = "github.com/sce81/Terraform-Vault-Provider-Auth"
-  version = "1.0.0"
+  source = "github.com/sce81/terraform-aws-ecs-fargate-cluster/Terraform-Vault-Provider-Auth"
 
   vault_url             = var.vault_url
   jwt_backend_path      = var.jwt_backend_path
@@ -9,4 +8,5 @@ module "vault-auth" {
   tfc_project_name      = var.tfc_project_name
   tfc_workspace_name    = var.tfc_workspace_name
   vault_policy          = local.vault_policy
+  vault_namespace       = var.vault_namespace
 }

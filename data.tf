@@ -19,5 +19,14 @@ path "auth/token/revoke-self" {
 path "secret/*" {
   capabilities = ["read"]
 }
+path "sys/namespaces/*" {
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+path "/+/sys/namespaces/*" {
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+path "/+/+/sys/namespaces/*" {
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
 EOT
 }
