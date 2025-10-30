@@ -1,5 +1,5 @@
 module "vault-auth" {
-  source  = "git:github.com/sce81/terraform-vault-provider-auth-roles"
+  source  = "git@github.com:sce81/terraform-vault-provider-auth-roles.git"
 
 
   jwt_backend_path      = var.jwt_backend_path
@@ -13,11 +13,4 @@ module "vault-auth" {
 //module "vault-variables" {
 //  source = "/Users/simon.elliott/Documents/Code/New_Structure/Terraform_Modules/TFE/terraform-tfe-variable-sets"
 //
-//}
-
-//data "tfe_github_app_installation" "name" {
-//  
-//}
-//output "github" {
-//  value = data.github_app_installation_id
 //}
