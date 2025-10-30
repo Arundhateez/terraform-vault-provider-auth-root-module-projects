@@ -1,5 +1,5 @@
 module "vault-auth" {
-  source  = "github.com/sce81/terraform-vault-provider-auth-roles"
+  source  = "git::https://${GITHUB_TOKEN}@github.com/sce81/terraform-vault-provider-auth-roles"
 
 
   jwt_backend_path      = var.jwt_backend_path
