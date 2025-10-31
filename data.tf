@@ -2,7 +2,44 @@ data "tfe_organization" "main" {
   name = var.organization
 }
 
+data "tfe_project" "main" {
+  for_each     = setunion([var.target_tfc_project], var.additional_tfc_projects)
+  name         = each.key
+  organization = data.tfe_organization.main.name
+}
+
 locals {
+  project_ids = toset([
+    for p in data.tfe_project.main : p.id
+  ])
+
+  variables = {
+    TFC_VAULT_ADDR = {
+      key         = "TFC_VAULT_ADDR"
+      value       = var.tfc_vault_addr
+      description = "Vault Address Environment Variable"
+      category    = "env"
+    },
+    TFC_VAULT_NAMESPACE = {
+      key         = "TFC_VAULT_NAMESPACE"
+      value       = var.tfc_vault_namespace
+      description = "Vault Namespace Environment Variable"
+      category    = "env"
+    },
+    TFC_VAULT_PROVIDER_AUTH = {
+      key         = "TFC_VAULT_PROVIDER_AUTH"
+      value       = "true"
+      description = "Instruct Workspace/s to leverage the Vault Provider Auth method"
+      category    = "env"
+    },
+    TFC_VAULT_RUN_ROLE = {
+      key         = "TFC_VAULT_RUN_ROLE"
+      value       = var.tfc_vault_run_role
+      description = "Instruct the Workspace to leverage this Vault Role"
+      category    = "env"
+    },
+  }
+
   role_policy = <<EOT
   # Allow a token to inspect its own metadata (TTL, policies, etc.) — read-only
     path "auth/token/lookup-self" {

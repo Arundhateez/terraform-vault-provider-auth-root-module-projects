@@ -1,7 +1,7 @@
 variable "vault_url" {
   type        = string
   description = "URL relating to Vault"
-  default = null
+  default     = null
 }
 variable "jwt_backend_path" {
   type        = string
@@ -46,10 +46,49 @@ variable "vault_namespace" {
 variable "vault_role_name" {
   type        = string
   default     = "changeme"
-  description = "Vault Namespace to create integration"
+  description = "Vault Role to assiciate with Terraform Platform"
 }
 variable "target_tfc_project" {
   type        = string
   default     = "changeme"
-  description = "Vault Namespace to create integration"
+  description = "Target project to associate Varset with"
 }
+variable "additional_tfc_projects" {
+  type        = set(string)
+  default     = []
+  description = "Additional Projects to associate Varset with"
+}
+
+variable "set_variables" {
+  type        = map(string)
+  default     = {}
+  description = "Target project to associate Varset with"
+}
+
+variable "set_name" {
+  type        = string
+  default     = "changeme"
+  description = "Target project to associate Varset with"
+}
+variable "set_description" {
+  type        = string
+  default     = "changeme"
+  description = "Additional Projects to associate Varset with"
+}
+
+variable "tfc_vault_addr" {
+  type        = string
+  default     = "changeme"
+  description = "Target project to associate Varset with"
+}
+variable "tfc_vault_namespace" {
+  type        = string
+  default     = "changeme"
+  description = "Additional Projects to associate Varset with"
+}
+variable "tfc_vault_run_role" {
+  type        = string
+  default     = "changeme"
+  description = "Additional Projects to associate Varset with"
+}
+
