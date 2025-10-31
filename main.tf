@@ -13,8 +13,8 @@ module "vault-variables" {
   source = "git@github.com:sce81/terraform-tfe-variable-sets"
 
   var_set_variables     = local.variables
-  set_name              = "HCP Vault Auth VarSet for ${var.target_tfc_project}"
-  set_description       = var.set_description
+  set_name              = "Vault Auth: ${var.target_tfc_project}"
+  set_description       = "HCP Vault Auth VarSet for Terraform Project: ${var.target_tfc_project}"
   tfc_organization_name = data.tfe_organization.main.name
   tfc_project           = local.project_ids
 }
