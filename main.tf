@@ -10,7 +10,7 @@ module "vault-auth" {
 
 
 module "vault-variables" {
-  source = "/Users/simon.elliott/Documents/Code/New_Structure/Terraform_Modules/TFE/terraform-tfe-variable-sets"
+  source = "git@github.com:sce81/terraform-tfe-variable-sets"
 
   var_set_variables     = local.variables
   set_name              = var.set_name
