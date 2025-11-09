@@ -9,9 +9,10 @@ provider "vault" {
 
 terraform {
   cloud {
-    organization = "HashiCorp_TFC_Automation_Demo"
+    organization = "HashiCorp_AWS_Org"
     workspaces {
-      tags = ["env"]
+      name    = "hcp_workspace_vault_provider_auth_cloud-security-non-production"
+      project = "workspace-management-vault"
     }
   }
   required_providers {
