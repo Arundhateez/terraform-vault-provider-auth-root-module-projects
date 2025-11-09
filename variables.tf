@@ -20,7 +20,7 @@ variable "tfc_hostname" {
 }
 variable "organization" {
   type        = string
-  default     = "HashiCorp_TFC_Automation_Demo"
+  default     = "HashiCorp_AWS_Org"
   description = "The name of your Terraform Cloud organization"
 }
 variable "tfc_project_name" {
