@@ -9,7 +9,7 @@ provider "vault" {
 
 terraform {
   cloud {
-    organization = "HashiCorp_AWS_Org"
+    organization = "LegalGeneral-OneTech"
     workspaces {
       name    = "hcp_workspace_vault_provider_auth_cloud-security-non-production"
       project = "workspace-management-vault"
