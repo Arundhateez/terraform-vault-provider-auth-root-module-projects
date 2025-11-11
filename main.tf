@@ -1,5 +1,5 @@
 module "vault-auth" {
-  source = "app.terraform.io/HashiCorp_AWS_Org/vault-provider-auth-roles/vault"
+  source = "app.terraform.io/LegalGeneral-OneTech/vault-provider-auth-roles/vault"
   jwt_backend_path      = var.jwt_backend_path
   role_name             = var.vault_role_name
   tfc_organization_name = data.tfe_organization.main.name
@@ -9,7 +9,7 @@ module "vault-auth" {
 
 
 module "vault-variables" {
-  source = "app.terraform.io/HashiCorp_AWS_Org/tfe-variable-sets/tfe"
+  source = "app.terraform.io/LegalGeneral-OneTech/tfe-variable-sets/tfe"
 
   var_set_variables     = local.variables
   set_name              = "Vault Auth: ${var.target_tfc_project}"
