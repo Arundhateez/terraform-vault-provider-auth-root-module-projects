@@ -22,7 +22,7 @@ locals {
     },
     TFC_VAULT_NAMESPACE = {
       key         = "TFC_VAULT_NAMESPACE"
-      value       = "admin/terraform"
+      value       = var.tfc_vault_namespace
       description = "Vault Namespace Environment Variable"
       category    = "env"
     },
@@ -34,12 +34,11 @@ locals {
     },
     TFC_VAULT_RUN_ROLE = {
       key         = "TFC_VAULT_RUN_ROLE"
-      value       = "vault-configuration-admin"
+      value       = var.tfc_vault_run_role
       description = "Instruct the Workspace to leverage this Vault Role"
       category    = "env"
     },
   }
-
 
 
   full_admin_policy = <<EOT
